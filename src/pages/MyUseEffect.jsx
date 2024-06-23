@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Swal from 'sweetalert2';
+import Menu from "../components/Menu";
 
 function MyUseEffect() {
 
@@ -11,7 +12,7 @@ function MyUseEffect() {
         Swal.fire({
             title: 'สวัสดี',
             text: 'ลาก่อน',
-            icon: 'success', // success , info , warning , danger, question 
+            icon: 'info', // success , info , warning , danger, question 
             timer:1000 
         })
     }
@@ -19,7 +20,7 @@ function MyUseEffect() {
     const showConfirmButton = () => {
         Swal.fire({
             title: 'ยืนยัน',
-            text: 'ยืนยันทำรายการหรือไหม',
+            text: 'ยืนยันทำรายการหรือไม่',
             icon: 'question',
             showCancelButton:true,
             showConfirmButton: true,
@@ -37,11 +38,13 @@ function MyUseEffect() {
     }
     return (    
         <>
+        <Menu />
+        <div> 
         <h3>Use Effect </h3>
         <button onClick={handleShowAlert}>Click for Show SweetAlert</button>
         
         <button onClick={showConfirmButton}>Confirm Button</button>
-
+        </div>
         </>
     )
 }
